@@ -1,1 +1,31 @@
-<p>order works!</p>
+<div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col col-md-6">
+          <h5 class="card-title">
+            {{ '::Menu:Orders' | abpLocalization }}
+          </h5>
+        </div>
+        <div class="text-right col col-md-6"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ngx-datatable [rows]="order.items" [count]="order.totalCount" [list]="list" default>
+        <ngx-datatable-column [name]="'::Description' | abpLocalization" prop="description"></ngx-datatable-column>
+        <ngx-datatable-column [name]="'::CustomerName' | abpLocalization" prop="customerName"></ngx-datatable-column>
+        <ngx-datatable-column [name]="'::ProductName' | abpLocalization" prop="productName"></ngx-datatable-column>
+        <ngx-datatable-column [name]="'::Count' | abpLocalization" prop="count"></ngx-datatable-column>
+        <ngx-datatable-column [name]="'::Price' | abpLocalization" prop="pirce">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row.pirce | currency }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [name]="'::PriceAll' | abpLocalization" prop="priceAll">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{ row.priceAll | currency }}
+            </ng-template>
+          </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+  
