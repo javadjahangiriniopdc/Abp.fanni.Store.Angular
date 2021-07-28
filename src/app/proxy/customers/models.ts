@@ -6,7 +6,7 @@ export interface CreateUpdateCustomerDto {
   birthday: string;
 }
 
-export interface CustomerDto extends AuditedEntityDto<number> {
+export interface CustomerDto extends AuditedEntityDto<string> {
   name?: string;
   family?: string;
   birthday?: string;

@@ -7,7 +7,7 @@ export interface CreateUpdateProductDto {
   productType: ProductType;
 }
 
-export interface ProductDto extends AuditedEntityDto<number> {
+export interface ProductDto extends AuditedEntityDto<string> {
   name?: string;
   pirce: number;
   productType: ProductType;

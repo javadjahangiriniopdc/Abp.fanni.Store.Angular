@@ -17,14 +17,14 @@ export class CustomerService {
     },
     { apiName: this.apiName });
 
-  delete = (id: number) =>
+  delete = (id: string) =>
     this.restService.request<any, void>({
       method: 'DELETE',
       url: `/api/app/customer/${id}`,
     },
     { apiName: this.apiName });
 
-  get = (id: number) =>
+  get = (id: string) =>
     this.restService.request<any, CustomerDto>({
       method: 'GET',
       url: `/api/app/customer/${id}`,
@@ -39,7 +39,7 @@ export class CustomerService {
     },
     { apiName: this.apiName });
 
-  update = (id: number, input: CreateUpdateCustomerDto) =>
+  update = (id: string, input: CreateUpdateCustomerDto) =>
     this.restService.request<any, CustomerDto>({
       method: 'PUT',
       url: `/api/app/customer/${id}`,

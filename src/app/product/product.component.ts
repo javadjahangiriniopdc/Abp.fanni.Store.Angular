@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
     this.isModalOpen = true;
   }
   // Add editBook method
-  editBook(id: number) {
+  editBook(id: string) {
     this.productService.get(id).subscribe((book) => {
       this.selectedProduct = book;
       this.buildForm();
@@ -73,7 +73,7 @@ export class ProductComponent implements OnInit {
   }
 
   // Add a delete method
-delete(id: number) {
+delete(id: string) {
   this.confirmation.warn('::AreYouSureToDelete', '::AreYouSure').subscribe((status) => {
     if (status === Confirmation.Status.confirm) {
       this.productService.delete(id).subscribe(() => this.list.get());

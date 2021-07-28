@@ -1,8 +1,8 @@
 import type { AuditedEntityDto, EntityDto } from '@abp/ng.core';
 
 export interface CreateUpdateOrderDto {
-  customerId: number;
-  productId: number;
+  customerId?: string;
+  productId?: string;
   description: string;
   count: number;
   pirce: number;
@@ -10,14 +10,14 @@ export interface CreateUpdateOrderDto {
   orderDate: string;
 }
 
-export interface CustomerLookupDto extends EntityDto<number> {
+export interface CustomerLookupDto extends EntityDto<string> {
   name?: string;
 }
 
-export interface OrderDto extends AuditedEntityDto<number> {
-  customerId: number;
+export interface OrderDto extends AuditedEntityDto<string> {
+  customerId?: string;
   customerName?: string;
-  productId: number;
+  productId?: string;
   productName?: string;
   description?: string;
   count: number;
@@ -26,6 +26,6 @@ export interface OrderDto extends AuditedEntityDto<number> {
   orderDate?: string;
 }
 
-export interface ProductLookupDto extends EntityDto<number> {
+export interface ProductLookupDto extends EntityDto<string> {
   name?: string;
 }

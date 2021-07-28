@@ -46,7 +46,7 @@ export class CustomerComponent implements OnInit {
   }
 
   // Add editBook method
-  editBook(id: number) {
+  editBook(id: string) {
     this.customerService.get(id).subscribe((customer) => {
       this.selectedCustomer = customer;
       this.buildForm();
@@ -80,7 +80,7 @@ export class CustomerComponent implements OnInit {
 }
 
 // Add a delete method
-delete(id: number) {
+delete(id: string) {
   this.confirmation.warn('::AreYouSureToDelete', '::AreYouSure').subscribe((status) => {
     if (status === Confirmation.Status.confirm) {
       this.customerService.delete(id).subscribe(() => this.list.get());

@@ -45,7 +45,7 @@ export class OrderComponent implements OnInit {
     this.isModalOpen = true;
   }
 
-  editBook(id: number) {
+  editBook(id: string) {
     this.orderService.get(id).subscribe((order) => {
       this.selectedOrder = order;
       this.buildForm();
@@ -84,7 +84,7 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  delete(id: number) {
+  delete(id: string) {
     this.confirmation.warn('::AreYouSureToDelete', 'AbpAccount::AreYouSure').subscribe((status) => {
       if (status === Confirmation.Status.confirm) {
         this.orderService.delete(id).subscribe(() => this.list.get());
